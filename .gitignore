@@ -1,0 +1,13 @@
+tmp/
+*.aux
+*.log
+*.nav
+*.out
+*.snm
+*.toc
+*.bcf
+*.run.xml
+*.xdv
+*.synctex.gz
+main.pdf
+libro_original.pdf

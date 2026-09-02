@@ -1,0 +1,62 @@
+% Misma geometría: espejo, convertidor visible, caja negra.
+\newcommand{\espejoPGN}[1]{%
+\begin{tikzpicture}[x=1cm,y=1cm]
+  \useasboundingbox (-0.2,-0.35) rectangle (13.35,4.85);
+  % Flechas detrás de los recuadros.
+  \ifnum#1=0
+    \draw[{Stealth}-{Stealth},thick,structure.fg] (3.85,3.2)--(9.25,3.2);
+    \draw[{Stealth}-{Stealth},thick,structure.fg] (3.85,0.9)--(9.25,0.9);
+  \else
+    \draw[-{Stealth},thick,structure.fg] (3.85,3.2)--(5.05,3.2);
+    \draw[-{Stealth},thick,structure.fg] (8.05,3.2)--(9.25,3.2);
+    \draw[-{Stealth},thick,structure.fg] (3.85,0.9)--(5.05,0.9);
+    \draw[-{Stealth},thick,structure.fg] (8.05,0.9)--(9.25,0.9);
+  \fi
+  \node[align=center,text width=4.5cm,text=structure.fg,font=\bfseries\small] at (1.925,4.4) {Contabilidad\\presupuestal};
+  \node[align=center,text width=4.5cm,text=structure.fg,font=\bfseries\small] at (11.175,4.4) {Contabilidad\\fiscal};
+  \node[draw=structure.fg,fill=structure.fg!5,minimum width=3.85cm,minimum height=1.05cm,font=\small] at (1.925,3.2) {Presupuesto};
+  \node[draw=structure.fg,fill=structure.fg!5,minimum width=3.85cm,minimum height=1.05cm,font=\small] at (11.175,3.2) {Plan financiero};
+  \node[draw=structure.fg,fill=structure.fg!5,minimum width=3.85cm,minimum height=1.05cm,font=\small] at (1.925,0.9) {Ejecución};
+  \node[draw=structure.fg,fill=structure.fg!5,minimum width=3.85cm,minimum height=1.05cm,font=\small] at (11.175,0.9) {Balance fiscal};
+  \ifnum#1=0
+    \node[fill=white,font=\small] at (6.55,3.2) {Programación};
+    \node[fill=white,font=\small] at (6.55,0.9) {Resultado};
+  \fi
+  \ifnum#1=1
+    \node[draw=structure.fg,fill=structure.fg!10,text width=2.65cm,minimum width=3cm,minimum height=3.55cm,align=center,font=\footnotesize] at (6.55,2.05) {\textbf{Convertidor}\\[0.4cm]Cobertura\\[0.2cm]Clasificación\\[0.2cm]Momento de\\registro};
+  \fi
+  \ifnum#1=2
+    \node[draw=black,fill=black,minimum width=3cm,minimum height=3.55cm,align=center,text=white] at (6.55,2.05) {\small\textbf{Convertidor}\\[0.5cm]\Large ?\\[0.4cm]\small Caja negra};
+  \fi
+\end{tikzpicture}}
+
+\begin{frame}{El plan y el balance deben ser espejos}
+\centering
+\espejoPGN{0}
+\par\small
+El plan financiero debe ser espejo del presupuesto;\\
+el balance fiscal, espejo de la ejecución. \textbf{Las cuentas deben conciliar.}
+\fuenteEOP{7 y 11}
+\fuenteCaja
+\note{[Sources] Esquema pedagógico solicitado por Oliver Pardo. Exigencia de consistencia, no igualdad directa entre totales con cobertura y metodologías distintas.}
+\end{frame}
+
+\begin{frame}{Entre las dos contabilidades hay un convertidor}
+\centering
+\espejoPGN{1}
+\par\small
+Hay que identificar las entidades, reclasificar las operaciones\\
+y ajustar el momento de registro. \textbf{No basta con igualar totales.}
+\fuenteCaja
+\note{[Sources] El convertidor representa la conciliación, no el nombre de un aplicativo oficial. Incluye consolidación dentro de cobertura y ajustes metodológicos dentro de clasificación y momento.}
+\end{frame}
+
+\begin{frame}{¿Y si el convertidor es una caja negra?}
+\centering
+\espejoPGN{2}
+\par\small
+Si no podemos reconstruir los ajustes, no podemos explicar\\
+cómo el presupuesto y su ejecución se traducen en cifras fiscales.
+\fuenteCaja
+\note{[Sources] Pregunta de transparencia formulada por Oliver Pardo. La caja negra es una hipótesis pedagógica; no afirma que todo ajuste oficial carezca de documentación pública.}
+\end{frame}

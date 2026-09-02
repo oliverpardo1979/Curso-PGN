@@ -1,14 +1,62 @@
-\documentclass{article}
-\usepackage{graphicx} % Required for inserting images
+\documentclass[aspectratio=169,10pt]{beamer}
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx,booktabs,array,ragged2e,tabularx,tabulary}
+\usepackage{longtable,threeparttablex,multirow,multicol,rotating,colortbl,hhline}
+\usepackage[export]{adjustbox}
+\usepackage{float,caption,subcaption,microtype,siunitx}
+\usepackage{amsmath,amssymb,mathtools,nccmath,cancel,gensymb,wasysym,marvosym}
+\usepackage{calc,tcolorbox,newfloat,enumerate,enumitem,etoolbox,fancyhdr,comment}
+\usepackage{hyperref,tikz,pgfplots,pgfplotstable,pgf-pie,fontsize}
+\changefontsize[13.8pt]{12pt}
+\usetikzlibrary{arrows.meta,mindmap,patterns,positioning,shapes.geometric}
+\usepgfplotslibrary{dateplot}
+\pgfplotsset{compat=1.18}
+\sisetup{output-decimal-marker={.}}
+\newcolumntype{P}[1]{>{\RaggedRight\arraybackslash}p{#1}}
+\usetheme{Singapore}
+\usecolortheme{orchid}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{headline}{}
+\setbeamertemplate{footline}[page number]
+\setbeameroption{hide notes}
 
-\title{Curso PGN}
-\author{oliverpardo }
-\date{September 2026}
+% Trazabilidad en las notas, sin ocupar espacio de proyección.
+\newcommand{\fuenteFMI}{\note{[Sources] Adaptación de FPC, modules/fcp_gg.tex. FMI, Manual de Estadísticas de Finanzas Públicas 2014, capítulos 4--9: https://www.imf.org/external/Pubs/FT/GFS/Manual/2014/gfsfinal.pdf. Ejemplos numéricos hipotéticos.}}
+\newcommand{\fuenteEOP}[1]{\note{[Sources] Adaptación de FPC, modules/fcp_ciclo.tex. Decreto 111 de 1996, artículos #1: https://www.funcionpublica.gov.co/eva/gestornormativo/norma.php?i=5306. También en https://www.ani.gov.co/sites/default/files/decreto_111_de_1996_0.pdf. Consulta: 2 de septiembre de 2026.}}
+\newcommand{\fuenteCaja}{\note{[Sources] MHCP, FAQ de estadísticas tradicionales: https://www.minhacienda.gov.co/atencion-y-servicio-a-la-ciudadania/preguntas-frecuentes/faq-politica-fiscal-et. MHCP, FAQ de estadísticas con estándares internacionales: https://www.minhacienda.gov.co/atencion-ciudadania/faq-politica-fiscal-estad-internal. Consulta: 2 de septiembre de 2026.}}
+\title{Presupuesto General de la Nación}
+\subtitle{Del presupuesto al balance fiscal}
+\author{Oliver Pardo}
+\institute{Pontificia Universidad Javeriana}
+\date{Septiembre de 2026}
 
 \begin{document}
+\part{Del presupuesto al balance fiscal}
+\begin{frame}
+  \titlepage
+\end{frame}
+\begin{frame}{Dos preguntas para el curso}
+\begin{enumerate}
+  \item ¿Cómo se transforma una autorización de gasto en una operación fiscal?
+  \vspace{1em}
+  \item ¿Qué restricciones enfrenta el presupuesto para salir del laberinto fiscal?
+\end{enumerate}
+\end{frame}
+\section{Ingresos y gastos en sentido fiscal}
+\input{modules/01_conceptos_fiscales}
+\section{Apropiaciones, compromisos, obligaciones y pagos}
+\input{modules/02_ejecucion_presupuestal}
+\section{Del presupuesto al balance fiscal}
+\input{modules/03_espejo_convertidor}
 
-\maketitle
-
-\section{Introduction}
-
+% Segunda sesión. Se conserva la secuencia completa del libro.
+\part{El laberinto fiscal de Colombia}
+\title{\Large El Laberinto Fiscal de Colombia}
+\subtitle{Causas, Riesgos y Salidas a la Crisis Fiscal}
+\institute{Director del Centro Javeriano de Competitividad y Profesor Asociado de la Pontificia Universidad Javeriana.\\[0.12cm]
+{\scriptsize\ttfamily javeriana.edu.co/centro-competitividad}\\[-0.02cm]
+{\scriptsize\ttfamily oliverpardoeconomia.com}}
+\date{Mayo de 2026}
+\input{modules/04_laberinto}
 \end{document}

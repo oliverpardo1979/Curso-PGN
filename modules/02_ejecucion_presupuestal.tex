@@ -1,0 +1,180 @@
+% Adaptación de FPC/modules/fcp_ciclo.tex, con CDP, RP, PAC y cierre.
+\begin{frame}{¿Qué son las apropiaciones?}
+Son los \textbf{montos máximos autorizados} para comprometer gasto durante la vigencia, con un objeto determinado.
+\begin{itemize}
+  \item No implican ejecución automática ni disponibilidad inmediata de caja.
+  \item La apropiación vigente incorpora las modificaciones autorizadas.
+  \item El Gobierno puede reducir o aplazar apropiaciones en los casos previstos en el Estatuto Orgánico del Presupuesto.
+\end{itemize}
+\fuenteEOP{76--80 y 89}
+\end{frame}
+
+\begin{frame}{Antes de comprometer: CDP y registro presupuestal}
+\begin{itemize}
+  \item El \textbf{certificado de disponibilidad presupuestal (CDP)} acredita apropiación suficiente y disponible.
+  \item El \textbf{registro presupuestal (RP)} afecta la apropiación con el compromiso y evita destinar esos recursos a otro fin.
+  \item Ni el CDP ni el RP son un pago.
+\end{itemize}
+\fuenteEOP{71}
+\end{frame}
+
+\begin{frame}{¿Qué son los compromisos?}
+Son actos o contratos que comprometen recursos para atender una finalidad autorizada.
+\begin{itemize}
+  \item Reducen el saldo disponible de apropiación.
+  \item No significan que el bien o servicio ya haya sido recibido.
+  \item Tampoco significan que ya se haya girado el dinero.
+\end{itemize}
+\vspace{0.7em}
+\textit{Ejemplo: un contrato de obra respaldado por su registro presupuestal.}
+\fuenteEOP{71 y 89}
+\end{frame}
+
+\begin{frame}{¿Qué son las obligaciones?}
+Son los valores reconocidos como exigibles a favor de un tercero, conforme a los requisitos aplicables.
+\begin{itemize}
+  \item Por ejemplo, al recibir bienes o servicios a satisfacción.
+  \item También pueden corresponder a anticipos pactados.
+  \item Se soportan en los documentos exigidos para cada operación.
+\end{itemize}
+\vspace{0.7em}
+Comprometer un contrato no equivale a obligar todo su valor.
+\fuenteEOP{89}
+\end{frame}
+
+\begin{frame}{¿Qué son los pagos?}
+Son las salidas efectivas de recursos para atender obligaciones reconocidas.
+\begin{itemize}
+  \item Requieren caja y programación de tesorería.
+  \item Pueden realizarse en una vigencia posterior a la del compromiso.
+  \item Debe distinguirse entre pagar el presupuesto de la vigencia y pagar el rezago de años anteriores.
+\end{itemize}
+\fuenteEOP{73 y 89}
+\end{frame}
+
+\begin{frame}{El PAC conecta el presupuesto con la caja}
+El \textbf{Programa Anual Mensualizado de Caja (PAC)} fija límites mensuales de fondos disponibles y pagos, según el régimen aplicable.
+\begin{itemize}
+  \item Tener apropiación no garantiza poder pagar hoy.
+  \item La programación de pagos debe ser compatible con el recaudo y el financiamiento.
+  \item Una restricción de caja puede aplazar el pago sin extinguir la obligación.
+\end{itemize}
+\fuenteEOP{73--75}
+\end{frame}
+
+\begin{frame}{Cuatro momentos de una misma operación}
+\centering
+\begin{tikzpicture}[x=1cm,y=1cm]
+  % Conectores detrás de las entidades.
+  \draw[-{Stealth},thick] (2.8,0)--(3.4,0);
+  \draw[-{Stealth},thick] (6.2,0)--(6.8,0);
+  \draw[-{Stealth},thick] (9.6,0)--(10.2,0);
+  \foreach \x/\titulo/\detalle in {1.4/Apropiación/Autorizar,4.8/Compromiso/Contratar,8.2/Obligación/Reconocer,11.6/Pago/Girar}{
+    \node[draw=structure.fg,fill=structure.fg!6,minimum width=2.8cm,minimum height=1.2cm,align=center] at (\x,0) {\small\titulo\\[0.15cm]\footnotesize\detalle};
+  }
+\end{tikzpicture}
+\vspace{1.3em}
+\begin{itemize}
+  \item El ciclo puede atravesar más de una vigencia fiscal.
+  \item Solo el último momento representa salida de caja.
+\end{itemize}
+\fuenteEOP{71, 73 y 89}
+\end{frame}
+
+\begin{frame}{¿Qué porcentaje se ha ejecutado?}
+Una medida habitual es:
+\[\text{Ejecución por obligaciones}=\frac{\text{Obligaciones}}{\text{Apropiación vigente}}\times100\]
+\begin{itemize}
+  \item También pueden calcularse porcentajes de compromisos y de pagos.
+  \item Siempre hay que declarar el numerador y el denominador.
+  \item Una alta ejecución no demuestra, por sí sola, calidad del gasto.
+\end{itemize}
+\fuenteEOP{71 y 89}
+\note{[Sources] Indicadores pedagógicos calculados a partir de las etapas de ejecución. No se presentan como definición única de ejecución ni como indicador de impacto.}
+\end{frame}
+
+\begin{frame}{Al cierre: apropiación no comprometida}
+\begin{itemize}
+  \item Las apropiaciones tienen una vigencia anual.
+  \item La parte que no se comprometió \textbf{expira}: deja de autorizar nuevos compromisos.
+  \item Esto no significa que haya desaparecido dinero de una cuenta bancaria.
+\end{itemize}
+\vspace{0.7em}
+\textbf{La apropiación es una autorización, no una bolsa de efectivo.}
+\fuenteEOP{14 y 89}
+\end{frame}
+
+\begin{frame}{Al cierre: compromiso no obligado}
+\begin{itemize}
+  \item Puede dar lugar a una \textbf{reserva presupuestal}, cumpliendo los requisitos legales.
+  \item Debe corresponder a un compromiso legalmente contraído y al objeto de la apropiación.
+  \item La reserva atiende el compromiso que la originó; no autoriza uno nuevo.
+\end{itemize}
+\vspace{0.7em}
+La autorización se comprometió, pero falta cumplir la operación que da lugar a la obligación.
+\fuenteEOP{89}
+\end{frame}
+
+\begin{frame}{Al cierre: obligación no pagada}
+\begin{itemize}
+  \item Da lugar a una \textbf{cuenta por pagar}, conforme a las reglas de cierre.
+  \item La obligación ya fue reconocida, pero el giro está pendiente.
+  \item Reservas y cuentas por pagar forman el \textbf{rezago presupuestal}.
+\end{itemize}
+\vspace{0.7em}
+El pago futuro del rezago compite por caja con la ejecución del nuevo presupuesto.
+\fuenteEOP{73 y 89}
+\end{frame}
+
+\begin{frame}{Ejercicio: un presupuesto de 100}
+Al 31 de diciembre, para una misma apropiación:
+\begin{center}
+\begin{tabular}{lr}
+\toprule
+Apropiación vigente & 100\\
+Compromisos & 80\\
+Obligaciones & 60\\
+Pagos & 50\\
+\bottomrule
+\end{tabular}
+\end{center}
+\begin{itemize}
+  \item ¿Cuánto expira, cuánto queda en reservas y cuánto en cuentas por pagar?
+  \item ¿Cuál es la ejecución por obligaciones y cuál por pagos?
+\end{itemize}
+\note{[Sources] Ejemplo hipotético de elaboración propia. Sin anticipos, anulaciones, ajustes ni rezago previo. Se supone que los compromisos pendientes cumplen los requisitos de reserva.}
+\end{frame}
+
+\begin{frame}{Solución: separar los saldos pendientes}
+\begin{align*}
+  \text{Apropiación que expira}&=100-80=20\\
+  \text{Reserva presupuestal}&=80-60=20\\
+  \text{Cuenta por pagar}&=60-50=10\\
+  \text{Rezago presupuestal}&=20+10=30
+\end{align*}
+\[\text{Ejecución por obligaciones}=60\%\qquad\text{Por pagos}=50\%\]
+\note{[Sources] Cálculo del ejemplo hipotético anterior: sin anticipos, anulaciones, ajustes ni rezago previo.}
+\end{frame}
+
+\begin{frame}{No toda demora equivale a un ahorro fiscal}
+\begin{itemize}
+  \item No comprometer puede reducir operaciones del año, aunque también incumplir objetivos de política.
+  \item Comprometer sin obligar puede trasladar presión a la siguiente vigencia mediante reservas.
+  \item Obligar sin pagar alivia transitoriamente la caja, pero deja una cuenta por pagar.
+\end{itemize}
+\vspace{0.7em}
+\textbf{Aplazar un pago no elimina el costo económico de la operación.}
+\fuenteEOP{89}
+\fuenteCaja
+\end{frame}
+
+\begin{frame}{¿Obligaciones o pagos para medir el gasto fiscal?}
+\begin{itemize}
+  \item En \textbf{caja}, importa cuándo se paga.
+  \item En \textbf{devengo}, importa cuándo ocurre el hecho económico, no cuándo se gira.
+  \item Las estadísticas fiscales tradicionales de Colombia usan \textbf{caja modificada}: caja más determinados ajustes de causación.
+\end{itemize}
+\vspace{0.7em}
+No hay una equivalencia automática entre obligaciones presupuestales y gasto fiscal publicado.
+\fuenteCaja
+\end{frame}
