@@ -1,0 +1,85 @@
+% Selección y síntesis de FPC: DeudaDinamica.tex y ReglaFiscalPedagogica.tex.
+% Se mantienen las ecuaciones y los ejemplos; se acorta el bloque a cuatro láminas.
+\begin{frame}{Interés, crecimiento y balance primario determinan la deuda}
+\[
+\boxed{d_t=\frac{1+i_t}{1+g_t}\,d_{t-1}-sp_t+a_t}
+\]
+\small
+\begin{itemize}
+\item $d_{t-1}$ y $d_t$: deuda inicial y final como porcentaje del PIB de cada año.
+\item $i_t$: tasa de interés nominal implícita de la deuda.
+\item $g_t$: crecimiento nominal del PIB.
+\item $sp_t$: superávit primario, como porcentaje del PIB del año $t$; un valor positivo reduce la deuda.
+\item $a_t$: valoraciones, reconocimientos de pasivos y otros ajustes, como porcentaje del PIB del año $t$.
+\end{itemize}
+\vspace{0.15cm}
+Con $a_t=0$, el superávit que estabiliza la deuda es:
+\[
+sp_t^{*}=\frac{i_t-g_t}{1+g_t}\,d_{t-1}.
+\]
+\note{[Sources] Adaptación de FPC, slides/DeudaDinamica.tex, láminas de ecuación y superávit estabilizador. Se preservan su notación y ecuaciones exactas. CARF, Documento de análisis del Plan Financiero 2024, páginas 26--27: https://www.carf.gov.co/documents/d/guest/2023-03-11-documento-tecnico-sobre-el-pf-2024-v6?download=true. En las fracciones, i y g se introducen como tasas decimales; d, sp y a usan la misma escala porcentual.}
+\end{frame}
+
+\begin{frame}{La ecuación de deuda se resuelve paso a paso}
+\small
+\textbf{Ejemplo hipotético:} deuda inicial de 60\% del PIB, interés nominal de 8\%, crecimiento nominal de 6\%, superávit primario de 1\% del PIB y sin ajustes de valoración.
+\vspace{0.25cm}
+\begin{enumerate}
+\item PIB inicial: 100. Deuda inicial: 60.
+\item Deuda más intereses: $60\times1{,}08=64{,}8$.
+\item PIB final: $100\times1{,}06=106$.
+\item Superávit primario: $0{,}01\times106=1{,}06$.\\
+Deuda final: $64{,}8-1{,}06=63{,}74$.
+\end{enumerate}
+\[
+d_1=\frac{63{,}74}{106}\times100=\boxed{60{,}13\%}.
+\]
+La deuda aumenta \textbf{0,13 puntos del PIB}. Para estabilizarla se requiere un superávit de aproximadamente \textbf{1,13\% del PIB}, no de 1\%.
+\note{[Sources] FPC, slides/DeudaDinamica.tex, ejemplos originales de cuatro pasos y superávit estabilizador. Se conservan exactamente los supuestos 60, 8, 6 y 1 por ciento y sus resultados redondeados. Son cifras pedagógicas, no una proyección de Colombia. Cálculo exacto: (1.08/1.06)*60-1=60.13207547; superávit estabilizador (0.08-0.06)/1.06*60=1.13207547.}
+\end{frame}
+
+\begin{frame}{La regla fiscal mide el balance primario neto estructural}
+\small
+Para el \textbf{GNC}, la regla combina una meta anual de \textbf{BPNE} con un ancla de deuda neta de \textbf{55\% del PIB} y un límite de \textbf{71\%}.
+\[
+BPN=BT+\text{intereses}-\text{rendimientos financieros}
+\]
+\[
+\boxed{BPNE=BPN-CE-CP-TUV}
+\]
+\textbf{CE}: ciclo económico; \textbf{CP}: ciclo petrolero; \textbf{TUV}: transacciones de única vez.\par
+\vspace{0.2cm}
+\noindent\textbf{Ejemplo hipotético, en \% del PIB:}
+\[
+BPNE=-1{,}0-(-0{,}4)-(-0{,}2)-(+0{,}1)=\boxed{-0{,}5}.
+\]
+Los ciclos negativos se descuentan; el ingreso de única vez no mejora el balance estructural. \textbf{BPNE no es lo mismo que balance total.}
+\note{[Sources] Síntesis de FPC, slides/ReglaFiscalPedagogica.tex, láminas de meta anual/ancla/límite y de definición del BPNE. Ejemplo original sin alterar cifras ni signos. Ley 2155 de 2021, artículo 60, que modifica el artículo 5 de la Ley 1473 de 2011, incluido parágrafo 1: https://www1.funcionpublica.gov.co/eva/gestornormativo/norma.php?i=170902. CARF, Documento de análisis del Plan Financiero 2024, sección de BPNE, páginas 14 y 24--26. Se distingue BPN de balance primario, descontando los rendimientos financieros.}
+\end{frame}
+
+\begin{frame}{La meta depende de la deuda; el desvío es temporal}
+\small
+\textbf{Régimen ordinario, sin cláusula de escape.} Deuda neta y BPNE en \% del PIB:
+\[
+BPNE_t^{\min}=\begin{cases}
+0{,}2+0{,}1(DN_{t-1}-55), & DN_{t-1}\leq70,\\
+1{,}8, & DN_{t-1}>70.
+\end{cases}
+\]
+\textbf{Ejemplo hipotético:} deuda neta del año anterior de 60\%. La meta es
+$0{,}2+0{,}1(60-55)=\mathbf{0{,}70\%}$ del PIB.
+\begin{center}
+\begin{tabular}{@{}lccc@{}}
+\toprule
+BPNE obtenido (\% del PIB) & 0,90 & 0,70 & 0,40 \\
+Frente a esa meta & Cumple & Cumple & No cumple \\
+\bottomrule
+\end{tabular}
+\end{center}
+\textbf{Cláusula de escape:} el CONFIS fija duración, desvío y senda de retorno, previo concepto no vinculante del CARF. No elimina el ancla ni el límite de deuda.\par
+\vspace{0.15cm}
+{\footnotesize\noindent El MFMP 2026 contempla la cláusula para 2026--2027 y retorno a la fórmula en 2028. \textbf{El 0,70\% del ejemplo no es la meta oficial de 2027.}\par}
+\note{[Sources] Síntesis de FPC, slides/ReglaFiscalPedagogica.tex, láminas de fórmula, cumplimiento y cláusula de escape. Ejemplo original de deuda 60 y BPNE 0.90/0.70/0.40. Ley 2155 de 2021, artículo 60, parágrafo 2. CARF, Documento de análisis del PF 2024, página 25, verifica el umbral <=70 y >70: https://www.carf.gov.co/documents/d/guest/2023-03-11-documento-tecnico-sobre-el-pf-2024-v6?download=true.
+CARF, concepto previo sobre la cláusula, 8 de junio de 2025: https://www.carf.gov.co/documents/d/guest/concepto-previo-no-vinculante-carf-clausula-de-escape-junio-8-de-2025-vf?download=true.
+MHCP, anexo reformulado del PGN 2027, agosto de 2026, resumen del MFMP 2026, páginas impresas 171 y 177 (PDF 184 y 190), mantiene el escenario de escape y retorno desde 2028; las actualizaciones de gasto de su sección 2.3 no se confunden con autorización de nuevos desvíos. No se presenta la fórmula ordinaria como meta vigente bajo escape. Consulta: 2 de septiembre de 2026.}
+\end{frame}

@@ -1,0 +1,161 @@
+% Extractos textuales de FPC_repo/modules/fcp_gg.tex: esquema y cuadro SPNF 2025.
+% Se omiten las repeticiones idénticas del esquema. No se añade contenido.
+
+\begin{frame}{Desagregaci\'on del Sector P\'ublico Consolidado}
+\centering
+\begin{tikzpicture}[node distance=0.5cm and 0.5cm, every node/.style={align=center},
+  box/.style={rectangle, draw, rounded corners, text width=3cm, minimum height=0.7cm},
+  level/.style={rectangle, draw, text width=3cm, minimum height=0.7cm}]
+
+\node[box, fill=blue!10] (spc) {\tiny{Sector P\'ublico Consolidado}};
+
+\node[level, below left=of spc] (spf) {\tiny{Sector Público Financiero}};
+\node[level, fill=green!10, below =of spc] (spnf) {\tiny{Sector Público No Financiero}};
+
+
+\node[level, fill=green!10, below=of spnf] (gg) {\tiny{Gobierno General}};
+\node[level, below left =of spnf] (eepp) {\tiny{Empresas Públicas}};
+
+
+\node[level, fill=red!10, below left=of gg] (gnc) {\tiny{Gobierno Nacional Central}};
+\node[level, fill=red!10, below =of gg] (et) {\tiny{Entidades Territoriales}};
+\node[level, fill=red!10, below right =of gg] (ss) {\tiny{Seguridad Social}};
+
+%\node[level, below left=of ss] (salud) {\tiny{Salud}};
+%\node[level, below right =of ss] (pensiones) {\tiny{Pensiones}};
+
+\node[box, fill=blue!10] (spc) {Sector P\'ublico Consolidado};
+
+% Conexiones directas desde SPC
+\draw[->] (spc) -- (spf);
+\draw[->] (spc) -- (spnf);
+
+\draw[->] (spnf) -- (gg);
+\draw[->] (spnf) -- (eepp);
+
+\draw[->] (gg) -- (gnc);
+\draw[->] (gg) -- (et);
+\draw[->] (gg) -- (ss);
+\end{tikzpicture}
+\end{frame}
+
+\begin{frame}[t]{Balance fiscal del Sector Público No Financiero, 2025}
+
+\vspace{-0.4em}
+
+\begin{table}
+\centering
+
+{\small Balances por subsector (\% del PIB)}
+
+\vspace{0.4em}
+
+\fontsize{5.2}{5.9}\selectfont
+\renewcommand{\arraystretch}{1.05}
+\setlength{\tabcolsep}{2pt}
+
+\begin{tabular}{
+    @{}p{0.35\linewidth}r
+    @{\hspace{6pt}}
+    p{0.35\linewidth}r@{}
+}
+
+\hline
+\textbf{Subsector} & \textbf{2025}
+& \textbf{Subsector} & \textbf{2025} \\
+\hline
+
+\textbf{Sector Público No Financiero (SPNF)}
+& \textbf{-6.7}
+& Seguridad social
+& 0.4
+\\
+
+\textbf{Gobierno General (GG)}
+& \textbf{-6.1}
+& \textbf{Empresas}
+& \textbf{-0.2}
+\\
+
+\hspace{0.5em} Gobierno central
+& -6.1
+& \hspace{0.5em} Empresas nacionales
+& 0.0
+\\
+
+\hspace{1em} Gobierno Nacional Central (GNC)
+& -6.4
+& \hspace{1em} Sector eléctrico
+& 0.0
+\\
+
+\hspace{1em} Resto del Gobierno Central
+& 0.2
+& \hspace{1em} Ecopetrol
+& 0.0
+\\
+
+\hspace{1.5em} Establecimientos públicos
+& 0.0
+& \hspace{1em} Telecom
+& 0.0
+\\
+
+\hspace{1.5em} Agencia Nacional de Hidrocarburos (ANH)
+& -0.1
+& \hspace{0.5em} Empresas locales
+& -0.2
+\\
+
+\hspace{1.5em} Fondo Nacional del Café (FNC)
+& 0.0
+& \hspace{1em} Empresas Públicas de Medellín (EPM)
+& -0.2
+\\
+
+\hspace{1.5em} FEPC
+& 0.2
+& \hspace{1em} ETB
+& 0.0
+\\
+
+\hspace{1.5em} Fondes
+& 0.0
+& \hspace{1em} Metro de Medellín
+& 0.0
+\\
+
+\hspace{0.5em} Regionales y locales
+& -0.4
+& \hspace{1em} EAAB
+& 0.0
+\\
+
+\hspace{1em} Administraciones centrales de las ET
+& -0.2
+& \hspace{1em} Empresas Municipales de Cali (Emcali)
+& 0.0
+\\
+
+\hspace{1em} Sistema General de Regalías (SGR)
+& -0.2
+& \textbf{Sector Público No Modelado (SPNM)}
+& \textbf{-0.4}
+\\
+
+\hspace{1em} Fondo de Ahorro y Estabilización Petrolera (FAEP)
+& 0.0
+& \textbf{Balance primario del SPNF}
+& \textbf{-3.4}
+\\
+
+\hline
+
+\end{tabular}
+
+\end{table}
+
+\vfill
+\scriptsize Fuente: MFMP 2026, apéndice 1. Cifras observadas de 2025; diferencias por redondeo.
+
+\end{frame}

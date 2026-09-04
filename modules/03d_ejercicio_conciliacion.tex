@@ -1,0 +1,46 @@
+% Los dos cuadros se muestran una sola vez en 03b; el PGN, en 03c.
+\begin{frame}{Ejercicio: reconstruir los balances y conciliar coberturas}
+\small
+Use los dos cuadros fiscales y el comparativo del PGN. Trabaje en \textbf{billones de pesos}, no en porcentajes del PIB.
+\vspace{0.25cm}
+\begin{enumerate}
+\item Calcule el balance primario y el balance total para tres columnas: \textbf{2026 del cuadro de julio}, \textbf{2027 MFMP} y \textbf{2027 actualizado}.
+\vspace{0.25cm}
+\item Entre el MFMP y la actualización de 2027, ¿cuánto cambia el balance total por \textbf{menores ingresos} y cuánto por \textbf{mayores gastos}?
+\vspace{0.25cm}
+\item El proyecto reformulado de PGN suma \textbf{634,952} billones y el gasto fiscal del GNC, \textbf{529,175}. ¿Basta con restar los \textbf{58,272} billones de principal del PGN para conciliarlos? Identifique qué ajustes faltan.
+\end{enumerate}
+\vfill
+\scriptsize Todas las cifras de 2026--2027 son proyecciones. No mezcle vigencias, versiones ni cobertura PGN/GNC. Conserve y explique las diferencias de redondeo de los cuadros.
+\note{[Sources] Cuadros originales de FPC, slides/BalanceFiscalPGN2027.tex, reproducidos en modules/03b_anexos_presidenciales.tex. MHCP--DGPM, cuadros de balance fiscal 2026--2027 y cuadro 2.3.4 del anexo reformulado de agosto de 2026, página impresa 193. MHCP--DGPPN, anexo reformulado, cuadro 1.6.1 (página impresa 45), cuadro 1.6.6 (61) y conciliación de la sección 2.4 (204--206). PGN y principal coinciden con el comparativo de modules/03c_comparativo_pgn2027.tex. Preguntas pedagógicas de elaboración propia.}
+\end{frame}
+
+\begin{frame}{Solución: el balance cambia por ingresos y gastos}
+\small
+\(BP=\text{ingresos}-\text{gasto primario}\),
+\quad \(BT=\text{ingresos}-\text{gasto total}\).
+\begin{center}
+\begin{tabular}{@{}lrrr@{}}
+\toprule
+\textbf{Billones de pesos} & \textbf{2026 (julio)} & \textbf{2027 MFMP} & \textbf{2027 actualizado} \\
+\midrule
+Balance primario calculado & $-41{,}400$ & $-11{,}621$ & $-95{,}682$ \\
+Balance total calculado & $-106{,}479$ & $-95{,}556$ & $-200{,}409$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+\textbf{Revisión de 2027:}
+\[
+\Delta BT=\underbrace{-40{,}965}_{\text{cambio en ingresos}}
+-\underbrace{63{,}888}_{\text{cambio en gasto}}
+=\boxed{-104{,}853}.
+\]
+\textbf{No basta con restar el principal del PGN:}
+\[
+634{,}952-58{,}272=576{,}680\ne529{,}175.
+\]
+Faltan ajustes de \textbf{cobertura, reclasificación y registro}; incluso el principal presupuestal debe depurarse para llegar a las amortizaciones fiscales.
+\vfill
+{\fontsize{7.4}{8.8}\selectfont Resultados recalculados con los montos de los cuadros. Algunos balances difieren en 0,001 billones del total publicado. No se usan los porcentajes inconsistentes de la columna ``PGN Petro''.\par}
+\note{[Sources] Cálculos propios con los dos cuadros originales MHCP--DGPM y con el cuadro 1.6.1 del anexo reformulado MHCP--DGPPN. En miles de millones: ingresos 325281, 369731, 328766; gasto primario 366681, 381352, 424448; gasto total 431760, 465287, 529175. La revisión 2027 es (328766-369731)-(529175-465287)=-104853. El balance primario MFMP recalculado es -11621 frente a -11620 publicado; el actualizado -95682 frente a -95683; el balance total actualizado -200409 frente a -200410. Se explicitan, no se corrigen las imágenes. PGN menos principal: 634952-58272=576680. El anexo reformulado, cuadros 2.4.2--2.4.6, documenta cobertura, SSF, reclasificación y registro; las amortizaciones fiscales finales son 57405, no el principal presupuestal de 58272. No se atribuye la brecha PGN/GNC a una sola causa.}
+\end{frame}
