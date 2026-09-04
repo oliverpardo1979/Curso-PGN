@@ -4,20 +4,19 @@ Oliver Pardo · Septiembre de 2026 · Dos sesiones de tres horas.
 
 La presentación editable está en `main.tex`. El PDF se publica en `output/pdf/Curso_PGN.pdf`.
 
-El PDF contiene **81 diapositivas**: sesión 1, páginas 1–51; sesión 2, páginas 52–81. La distinción entre PGN, GNC y gobierno general está en la página 34; los diagramas del espejo y convertidor, en 35–37; los tres cuadros históricos de Plan Financiero, en 38–40; los cuadros fiscales originales, en 41–42; el comparativo Petro–Abelardo, en 43; y el ejercicio de conciliación con su solución, en 44–45. Las láminas originales de clasificación de FPC están en 46–47 y el bloque de deuda y regla fiscal, en 48–51, antes del libro.
+El PDF contiene **78 diapositivas**: sesión 1, páginas 1–48; sesión 2, páginas 49–78. La distinción entre PGN, GNC y gobierno general está en la página 34; los diagramas del espejo y convertidor, en 35–37; los dos cuadros de los anexos, en 38–39; el comparativo Petro–Abelardo, en 40; y el ejercicio de conciliación con su solución, en 41–42. Las láminas originales de clasificación de FPC están en 43–44 y el bloque de deuda y regla fiscal, en 45–48, antes del libro.
 
 ## Contenido
 
 1. Ingresos, gastos y financiamiento: adaptación del curso FPC, con sus ejemplos de crédito, amortización, intereses, hipoteca y venta de activos.
 2. Apropiaciones, compromisos, obligaciones y pagos: adaptación de FPC, complementada con CDP, RP, PAC, reservas, cuentas por pagar y un ejercicio resuelto.
 3. Una lámina distingue PGN, GNC y gobierno general. Le siguen tres láminas consecutivas con idéntica estructura: espejo entre contabilidad presupuestal y fiscal; convertidor; convertidor como caja negra.
-4. Tres cuadros del curso FPC comparan los planes financieros con los resultados observados: pronóstico del PGN 2024 frente al cierre de 2024; Plan Financiero de 2025 frente al cierre de 2025; y cierre de 2025 frente a la proyección de 2026. Se conservan las cifras, títulos y fuentes de FPC. Las cifras de 2026 se identifican como proyecciones.
-5. Dos cuadros de los anexos presidenciales, como caso para discutir el convertidor: proyecciones del plan financiero para 2026–2027 y comparación del balance fiscal 2027 entre MFMP, PGN y actualización. Se reproducen las imágenes originales, con sus cifras, unidades, fuente y condición de proyecciones. Se mantiene la advertencia de FPC sobre los porcentajes inconsistentes de gasto y balances de la columna «PGN Petro».
-6. Cuadro comparativo de los proyectos del PGN 2027 de Petro (julio de 2026) y Abelardo (agosto de 2026): funcionamiento, inversión y servicio de la deuda, separado en amortizaciones (principal), intereses, comisiones y otros gastos, y Fondo de Contingencias. Incluye el total y las diferencias Abelardo menos Petro, en billones de pesos corrientes. Son proyecciones, no ejecución.
-7. Ejercicio y solución de conciliación: reconstruir balances primario y total de los cuadros, descomponer la revisión de 2027 en ingresos y gastos, y explicar por qué no basta con restar el principal del PGN para llegar al gasto fiscal del GNC. No se duplican las imágenes originales.
-8. Dos láminas copiadas textualmente de FPC, antes del bloque de deuda y del libro: «Desagregación del Sector Público Consolidado» y «Balance fiscal del Sector Público No Financiero, 2025». Se conservan sus textos, cifras, clasificación y código LaTeX; solo se omiten las repeticiones idénticas del esquema.
-9. Cuatro láminas de deuda y regla fiscal, seleccionadas y sintetizadas de FPC: ecuación exacta y superávit estabilizador, ejemplo numérico paso a paso, definición y cálculo del BPNE, y fórmula ordinaria con ejemplo de cumplimiento y distinción de la cláusula de escape. Se conservan los supuestos y resultados de los ejemplos originales.
-10. Presentación completa de *El laberinto fiscal de Colombia*: las 30 diapositivas activas de la versión independiente, en su orden original.
+4. Dos cuadros de los anexos presidenciales, como caso para discutir el convertidor: proyecciones del plan financiero para 2026–2027 y comparación del balance fiscal 2027 entre MFMP, PGN y actualización. Se reproducen las imágenes originales, con sus cifras, unidades, fuente y condición de proyecciones. Se mantiene la advertencia de FPC sobre los porcentajes inconsistentes de gasto y balances de la columna «PGN Petro».
+5. Cuadro comparativo de los proyectos del PGN 2027 de Petro (julio de 2026) y Abelardo (agosto de 2026): funcionamiento, inversión y servicio de la deuda, separado en amortizaciones (principal), intereses, comisiones y otros gastos, y Fondo de Contingencias. Incluye el total y las diferencias Abelardo menos Petro, en billones de pesos corrientes. Son proyecciones, no ejecución.
+6. Ejercicio y solución de conciliación: reconstruir balances primario y total de los cuadros, descomponer la revisión de 2027 en ingresos y gastos, y explicar por qué no basta con restar el principal del PGN para llegar al gasto fiscal del GNC. No se duplican las imágenes originales.
+7. Dos láminas copiadas textualmente de FPC, antes del bloque de deuda y del libro: «Desagregación del Sector Público Consolidado» y «Balance fiscal del Sector Público No Financiero, 2025». Se conservan sus textos, cifras, clasificación y código LaTeX; solo se omiten las repeticiones idénticas del esquema.
+8. Cuatro láminas de deuda y regla fiscal, seleccionadas y sintetizadas de FPC: ecuación exacta y superávit estabilizador, ejemplo numérico paso a paso, definición y cálculo del BPNE, y fórmula ordinaria con ejemplo de cumplimiento y distinción de la cláusula de escape. Se conservan los supuestos y resultados de los ejemplos originales.
+9. Presentación completa de *El laberinto fiscal de Colombia*: las 30 diapositivas activas de la versión independiente, en su orden original.
 
 ## Fuentes y comparabilidad del PGN 2027
 
@@ -47,7 +46,7 @@ Los tiempos son una guía para el docente, no aparecen en la proyección.
 | Pausa | 10 |
 | Etapas de ejecución, cierre y ejercicio numérico | 45 |
 | Cobertura institucional, espejo y convertidor | 20 |
-| Planes financieros, anexos, comparación Petro–Abelardo y conciliación | 35 |
+| Plan Financiero 2027, anexos, comparación Petro–Abelardo y conciliación | 35 |
 | Clasificación y desagregación del sector público | 5 |
 | Dinámica de deuda y regla fiscal | 25 |
 | **Total** | **180** |
@@ -99,9 +98,9 @@ También se puede abrir `main.tex` en Overleaf y compilar con XeLaTeX. La primer
 
 ## Verificación
 
-Compilación local con Tectonic 0.16.9, sin desbordamientos ni caracteres ausentes. El PDF tiene 81 páginas. Se verifica que los tres cuadros históricos de Plan Financiero coinciden con FPC y aparecen en 38–40. También se verifica la identidad textual de las dos láminas de clasificación copiadas de FPC y su presencia en 46–47. Las dos imágenes de los anexos se verifican por SHA-256 y aparecen en 41–42. El comparativo de la página 43 se coteja contra las ocho filas del CSV y sus diferencias calculadas; se comprueban los cálculos de la solución y de los ejemplos de deuda y regla fiscal. El texto de las 30 páginas del libro coincide con el PDF independiente original, excluida la numeración. Los dos cambios de maquetación del libro no alteran sus cifras.
+Compilación local con Tectonic 0.16.9, sin desbordamientos ni caracteres ausentes. El PDF tiene 78 páginas. Las dos imágenes de los anexos se verifican por SHA-256 y aparecen en 38–39. El comparativo de la página 40 se coteja contra las ocho filas del CSV y sus diferencias calculadas; se comprueban los cálculos de la solución y de los ejemplos de deuda y regla fiscal. También se verifica la identidad textual de las dos láminas de clasificación copiadas de FPC y su presencia en 43–44. El texto de las 30 páginas del libro coincide con el PDF independiente original, excluida la numeración. Los dos cambios de maquetación del libro no alteran sus cifras.
 
-Las diez láminas nuevas se revisaron visualmente a 144 dpi. La comparación de texto e imágenes confirma que las 71 diapositivas anteriores conservan su contenido y diseño; solo cambia su numeración.
+Las siete láminas nuevas se revisaron visualmente a 144 dpi. La comparación de texto e imágenes confirma que las 71 diapositivas anteriores conservan su contenido y diseño; solo cambia su numeración.
 
 La verificación automatizada de estructura, PDF y material inactivo está en `scripts/verify_deck.py` (requiere Python y `pypdf`):
 

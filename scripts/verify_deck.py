@@ -26,21 +26,15 @@ assert sha256(sector_frames.encode('utf-8')).hexdigest() == '93fb10f78aa9d1e8314
 
 annex_source = (ROOT / 'modules/03b_anexos_presidenciales.tex').read_text(encoding='utf-8')
 assert annex_source.count(r'\begin{frame}') == 2
-for name, expected_hash in {
-    'pf2024.tex': '4a69a84347f5c76d5d5ec42c9319e6dd9970973aec43a2a95a9d111e64eb7869',
-    'pf2025.tex': '58579c71e2ee1d673103820b16e1c100aaa26a5e36762682b8c71cc3be18cf07',
-    'pf2026.tex': '6085294b3184dc129aa8dc1ba7ab545234aa0b6d394b39066e7fa2baf79b7d42',
-}.items():
-    source = (ROOT / 'slides' / name).read_text(encoding='utf-8')
-    assert sha256(source.encode('utf-8')).hexdigest() == expected_hash, f'{name} ya no coincide con la versión actualizada de FPC.'
 main = (ROOT / 'main.tex').read_text(encoding='utf-8')
 input_order = ['modules/01_conceptos_fiscales', 'modules/02_ejecucion_presupuestal', 'modules/02b_cobertura',
-               'modules/03_espejo_convertidor', 'slides/pf2024', 'slides/pf2025', 'slides/pf2026',
-               'modules/03b_anexos_presidenciales', 'modules/03c_comparativo_pgn2027',
+               'modules/03_espejo_convertidor', 'modules/03b_anexos_presidenciales',
+               'modules/03c_comparativo_pgn2027',
                'modules/03d_ejercicio_conciliacion', 'modules/00_sector_publico',
                'modules/03e_deuda_regla', 'modules/04_laberinto']
 positions = [main.index(r'\input{' + name + '}') for name in input_order]
 assert positions == sorted(positions), 'Cambió el orden solicitado: cobertura antes del convertidor; sector público, deuda y regla antes del libro.'
+assert all(r'\input{slides/' + name + '}' not in main for name in ['pf2024', 'pf2025', 'pf2026']), 'Solo debe estar activo el bloque fiscal de 2027.'
 assert not re.search(r'\\(?:input|begin\{frame\})', main[positions[-2] + len(r'\input{modules/03e_deuda_regla}'):positions[-1]])
 for module, count in [('02b_cobertura', 1), ('03d_ejercicio_conciliacion', 2), ('03e_deuda_regla', 4)]:
     assert (ROOT / f'modules/{module}.tex').read_text(encoding='utf-8').count(r'\begin{frame}') == count
@@ -71,27 +65,26 @@ for name, expected in {
     assert sha256((ROOT / 'assets' / name).read_bytes()).hexdigest() == expected, f'Se alteró la imagen original: {name}'
 
 pdf = PdfReader(ROOT / 'output/pdf/Curso_PGN.pdf')
-assert len(pdf.pages) == 81, f'Se esperaban 81 páginas, hay {len(pdf.pages)}'
+assert len(pdf.pages) == 78, f'Se esperaban 78 páginas, hay {len(pdf.pages)}'
 texts = [p.extract_text() or '' for p in pdf.pages]
 assert all(len(t.strip()) > 15 for t in texts), 'Página vacía'
 for page in pdf.pages:
     assert abs(float(page.mediabox.width) / float(page.mediabox.height) - 16/9) < .002
 for page, expected in [(3, 'entendemos por ingresos y gastos'), (34, 'PGN, GNC y gobierno general'),
                        (35, 'espejos'), (36, 'convertidor'), (37, 'caja negra'),
-                       (38, 'Pronóstico PGN 2024'), (39, 'Plan Financiero vs cierre de 2025'),
-                       (40, '2026 proyectado'), (41, 'proyecciones 2026 y 2027'),
-                       (42, 'Balance fiscal 2027'), (43, 'Petro frente a Abelardo'),
-                       (44, 'Ejercicio: reconstruir'), (45, 'Solución: el balance'),
-                       (46, 'Desagregación del Sector Público Consolidado'),
-                       (47, 'Balance fiscal del Sector Público No Financiero, 2025'),
-                       (48, 'balance primario determinan'), (49, 'paso a paso'),
-                       (50, 'balance primario neto estructural'), (51, 'desvío es temporal'),
-                       (52, 'libro')]:
+                       (38, 'proyecciones 2026 y 2027'), (39, 'Balance fiscal 2027'),
+                       (40, 'Petro frente a Abelardo'), (41, 'Ejercicio: reconstruir'),
+                       (42, 'Solución: el balance'),
+                       (43, 'Desagregación del Sector Público Consolidado'),
+                       (44, 'Balance fiscal del Sector Público No Financiero, 2025'),
+                       (45, 'balance primario determinan'), (46, 'paso a paso'),
+                       (47, 'balance primario neto estructural'), (48, 'desvío es temporal'),
+                       (49, 'libro')]:
     assert expected in ' '.join(texts[page-1].split()), (page, expected)
-for page in [41, 42]:
+for page in [38, 39]:
     assert len(pdf.pages[page-1].images) == 1, f'Falta el cuadro en la página {page}'
-assert 'no son consistentes' in ' '.join(texts[41].split()), 'Falta la advertencia sobre los porcentajes del cuadro original.'
-comparison_text = ' '.join(texts[42].split())
+assert 'no son consistentes' in ' '.join(texts[38].split()), 'Falta la advertencia sobre los porcentajes del cuadro original.'
+comparison_text = ' '.join(texts[39].split())
 for row in rows:
     assert row['concepto'] in comparison_text
     for key in ['petro_miles_millones', 'abelardo_miles_millones', 'diferencia_miles_millones']:
@@ -101,7 +94,7 @@ for row in rows:
 assert 'Cifras proyectadas' in comparison_text and '0,001 billones' in comparison_text
 
 # Ejercicio: resultados recalculados, no sustituciones silenciosas de las imágenes.
-solution = texts[44].replace(' ', '').replace('\n', '')
+solution = texts[41].replace(' ', '').replace('\n', '')
 incomes = [325281, 369731, 328766]
 primary_spending = [366681, 381352, 424448]
 total_spending = [431760, 465287, 529175]
@@ -111,15 +104,15 @@ for revenue, primary, total in zip(incomes, primary_spending, total_spending):
 assert (incomes[2] - incomes[1]) - (total_spending[2] - total_spending[1]) == -104853
 assert 634952 - 58272 == 576680
 assert all(value in solution for value in ['40,965', '63,888', '104,853', '576,680', '529,175', '0,001'])
-debt_example = ' '.join(texts[48].split()).replace(' ', '')
+debt_example = ' '.join(texts[45].split()).replace(' ', '')
 assert round((1.08/1.06)*60-1, 2) == 60.13
 assert round((.08-.06)/1.06*60, 2) == 1.13
 assert all(value in debt_example for value in ['63,74', '60,13', '1,13'])
 assert round(-1-(-.4)-(-.2)-.1, 2) == -.5
 assert round(.2+.1*(60-55), 2) == .7
-assert '0,5' in texts[49].replace(' ', '')
-assert 'no es la meta oficial de 2027' in ' '.join(texts[50].split())
-assert '2028' in texts[50] and '55%' in texts[49].replace(' ', '') and '71%' in texts[49].replace(' ', '')
+assert '0,5' in texts[46].replace(' ', '')
+assert 'no es la meta oficial de 2027' in ' '.join(texts[47].split())
+assert '2028' in texts[47] and '55%' in texts[46].replace(' ', '') and '71%' in texts[46].replace(' ', '')
 
 # Firmas de láminas internas que deben permanecer desactivadas.
 for inactive in ['Lecciones de casos comparados', 'debt overhang', 'AFP y bancos']:
@@ -128,11 +121,11 @@ log = ROOT / 'tmp/latex/main.log'
 if log.exists():
     log_text = log.read_text(encoding='utf-8', errors='replace')
     assert not re.search(r'Overfull \\[hv]box|Missing character|Undefined control sequence', log_text), 'Revisar advertencias LaTeX'
-print('OK: 81 páginas 16:9; 51 en la sesión 1 y 30 del libro en la sesión 2.')
-print('OK: cobertura PGN/GNC/GG en 34; cuadros históricos de Plan Financiero en 38–40.')
-print('OK: sector público original de FPC intacto en 46–47.')
+print('OK: 78 páginas 16:9; 48 en la sesión 1 y 30 del libro en la sesión 2.')
+print('OK: cobertura PGN/GNC/GG en 34; bloque fiscal de 2027 en 38–42.')
+print('OK: sector público original de FPC intacto en 43–44.')
 print('OK: secuencia del libro y todos sus comentarios intactos; 78 fuentes y 7 imágenes.')
-print('OK: los dos cuadros originales están en 41–42, sin duplicar ni alterar sus PNG.')
-print('OK: Petro–Abelardo en 43; ejercicio y solución verificados en 44–45.')
-print('OK: cuatro láminas de deuda y regla fiscal en 48–51, antes del libro; cálculos y salvedad de escape verificados.')
+print('OK: los dos cuadros originales están en 38–39, sin duplicar ni alterar sus PNG.')
+print('OK: Petro–Abelardo en 40; ejercicio y solución verificados en 41–42.')
+print('OK: cuatro láminas de deuda y regla fiscal en 45–48, antes del libro; cálculos y salvedad de escape verificados.')
 print('OK: sin páginas vacías, glifos ausentes ni desbordamientos de LaTeX.')
